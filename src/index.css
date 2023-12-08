@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #EEF2F2;
+}
+@font-face {
+    font-family: "roboto";
+    src: url(/Roboto/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: "roboto";
+    src: url(/Roboto/Roboto-Bold.ttf);
+    font-weight: 300;
+}
+@font-face {
+    font-family: "roboto";
+    src: url(/Roboto/Roboto-Light.ttf);
+    font-weight: 100;
+}
+*{
+    font-family: "roboto";
+}
+#root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    body{
+        
+        padding: 10px;
+        height: 100vh;
+        box-sizing: border-box;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    body{
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    body{
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    body{
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {    
+    body{
+    }
+}
