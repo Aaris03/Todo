@@ -15,7 +15,7 @@ li{
     padding: 0px 10px;
     cursor: pointer;
 }
-strong{
+.check-Box strong{
     font-size: 1.2em;
 }
 span{
@@ -29,7 +29,7 @@ span{
 li p{
     padding-right: 20px;
 }
-strong, span{
+.check-Box strong, span{
     color: #7c7c7c;
 }
 span:hover{

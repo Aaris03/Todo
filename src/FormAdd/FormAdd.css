@@ -1,0 +1,79 @@
+.add-todo{
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px 0px;
+    box-sizing: border-box;
+}
+.add-todo textarea{
+    width: 80%;
+    height: 100px;
+    resize: none;
+}
+.add-todo textarea::placeholder{
+    line-height: 100px;
+}
+.row-modal{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.row-modal button{
+    width: 100px;
+    padding: 10px 0px;
+    border: none;
+    cursor: pointer;
+}
+.submit-btn{
+    background-color: rgb(97, 218, 250);
+}
+.submit-btn:hover:enabled{
+    color: white;
+    background-color: rgb(31 138 166);
+}
+.cancel-btn:hover{
+    background-color: red;
+    color: white;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .add-todo{
+        width: 70%;
+        height: 50%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .add-todo{
+        width: 60%;
+        height: 50%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .add-todo{
+        width: 50%;
+        height: 50%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .add-todo{
+        width: 40%;
+        height: 50%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {    
+    .add-todo{
+        width: 40%;
+        height: 50%;
+    }
+}

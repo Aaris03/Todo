@@ -1,4 +1,4 @@
-button{
+.add-todo-btn{
     position: fixed;
     bottom: 5%;
     right: 5%;
@@ -11,21 +11,25 @@ button{
     background-color: rgb(97, 218, 250);
     border: none;
     cursor: pointer;
+    z-index: 2;
 }
 
-button p{
+.add-todo-btn p{
     font-weight: 300;
     font-size: xx-large;
     color: white;
     transition: all 0.5s;
 }
-button:hover p{
+.add-todo-btn:hover p{
     transform: rotate(180deg);
     font-size: xxx-large;
 }
-button:active{
+.add-todo-btn:active{
     background-color: white;
 }
-button:active p {
+.add-todo-btn:active p {
    color: rgb(97, 218, 250);;
+}
+.btn-add-shadow{
+    box-shadow: 0px 0px 5px white;
 }

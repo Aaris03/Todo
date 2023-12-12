@@ -6,51 +6,53 @@ import { CreateTodoButton } from '../CreateTodoButton/CreateTodoButton';
 import { TodoContainer } from '../TodoContainer/TodoContainer';
 import { TodoLoading } from '../TodoLoadings/TodoLoading';
 import { TodoError } from '../TodoError/TodoError';
+import { TodoContext } from '../TodoContext';
+import { Modal } from '../Modal';
+import { FormAdd } from '../FormAdd/FormAdd';
+import React from 'react';
 
-function AppUI ({
-    todoCompleted,
-    todoTotal,
-    searchValue,
-    setSearchValue,
+function AppUI (){
+  const {
+    todos,
     searchTodos,
     completeTodo,
     deleteTodo,
     loading,
-    error
-}){
-    return (
-        <>
-          <TodoCounter 
-            completed={todoCompleted} 
-            total={todoTotal} 
-            loading={loading}/>
-          <TodoSearch
-            searchValue={searchValue}
-            setSearchValue={setSearchValue}
-            loading={loading}
-          />
-          <TodoContainer>
-            <TodoList>
-              {loading && <TodoLoading/>}
-              {error && <TodoError/>}
-              {(!loading && searchTodos.length == 0) && <p>Crea tu primer to do</p>}
+    error,
+    openModal
+  } = React.useContext(TodoContext);
 
-              {searchTodos.map(todo => (
-                <TodoItem 
-                  key={todo.id} 
-                  text={todo.text} 
-                  completed={todo.completed}
-                  onComplete={() => completeTodo(todo.text)}
-                  onDelete={() => deleteTodo(todo.text)}
-                />
-              ))}
-            </TodoList>
-          </TodoContainer>
-          
-          <CreateTodoButton/>
-    
-        </>
-    );
+  return (
+    <>
+      <TodoCounter/>
+      <TodoSearch/>
+      <TodoContainer>
+        <TodoList>
+          {loading && <TodoLoading/>}
+          {error && <TodoError/>}
+          {(!loading && todos.length === 0) && <p>Crea tu primer TO DO</p>}
+          {(!loading && searchTodos.length === 0 && todos.length > 0) && <p>No existe coincidencia</p>}
+
+          {searchTodos.map(todo => (
+            <TodoItem 
+              key={todo.id} 
+              text={todo.text} 
+              completed={todo.completed}
+              onComplete={() => completeTodo(todo.text)}
+              onDelete={() => deleteTodo(todo.text)}
+            />
+          ))}
+        </TodoList>
+      </TodoContainer>
+      
+      <CreateTodoButton/>
+      {openModal && 
+        <Modal>
+          <FormAdd></FormAdd>
+        </Modal>
+      }
+    </>
+  );
 }
 
 export {AppUI};
