@@ -15,8 +15,6 @@ function TodoProvider({children}){
       const [searchValue, setSearchValue] = React.useState("");
 
       const [openModal, setOpenModal] = React.useState(false);
-
-      console.log(todos.length)
     
       let todoCompleted = todos.filter(
         todo => !!todo.completed).length;
@@ -35,7 +33,7 @@ function TodoProvider({children}){
         let newId;
         const newTodos = [...todos]
         
-        if (newTodos.length != 0) {
+        if (newTodos.length !== 0) {
           const lastTodoId = newTodos.slice(-1)
           newId = (lastTodoId[0].id)+1
         } else {
